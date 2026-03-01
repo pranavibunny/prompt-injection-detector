@@ -9,6 +9,7 @@ os.makedirs(DATA_DIR, exist_ok=True)
 
 from detector import detect_injection, print_detection_report
 from sanitizer import respond_to_injection, print_sanitization_report
+from output_formatter import format_detection_result, print_json_result, save_json_result
 
 print("=" * 70)
 print("  PROMPT INJECTION DETECTION & GUARDRAIL LAB")
@@ -33,6 +34,15 @@ for user_input in test_inputs:
     # Layer 2 — Respond
     sanitization_result = respond_to_injection(user_input, detection_result)
     print_sanitization_report(sanitization_result)
+
+    # Phase 3 — Structured JSON output
+    json_result = format_detection_result(
+        user_input,
+        detection_result,
+        sanitization_result
+        )
+    print_json_result(json_result)
+    save_json_result(json_result, os.path.join(DATA_DIR, "detection_results.json"))
 
 print("\n" + "="*70)
 print("  PIPELINE COMPLETE")
