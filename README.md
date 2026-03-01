@@ -91,11 +91,12 @@ python app/main.py
 
 - [x] Phase 1 — Rule based injection detection engine
 - [x] Phase 2 — Input sanitization with block / sanitize / quarantine responses
-- [ ] Phase 3 — JSON output validation and self repair
+- [ ] Phase 3 — Structured JSON output (machine readable pipeline results)
 - [ ] Phase 4 — LLM judge using local Ollama
-- [ ] Phase 5 — Hybrid pipeline — rules + LLM judge combined
-- [ ] Phase 6 — OWASP LLM Top 10 full test suite
-- [ ] Phase 7 — Streamlit dashboard
+- [ ] Phase 5 — JSON output validation and self repair (LLM output)
+- [ ] Phase 6 — Hybrid pipeline — rules + LLM judge combined
+- [ ] Phase 7 — OWASP LLM Top 10 full test suite
+- [ ] Phase 8 — Streamlit dashboard
 
 ---
 
